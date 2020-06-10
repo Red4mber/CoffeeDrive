@@ -21,6 +21,9 @@ project "CoffeeDrive"
 	targetdir ("bin/"..outputDir.."/%{prj.name}")
 	objdir ("bin-int/"..outputDir.."/%{prj.name}")
 
+	pchheader "cf_pch.h"
+	pchsource "CoffeeDrive/src/cf_pch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

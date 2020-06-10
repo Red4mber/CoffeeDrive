@@ -1,3 +1,4 @@
+#include "cf_pch.h"
 #include "Log.h"
 
 namespace Coffee {

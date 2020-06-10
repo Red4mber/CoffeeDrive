@@ -1,7 +1,9 @@
+#include "cf_pch.h"
 #include "Application.h"
 
 #include "Coffee/Log.h"
 #include "Coffee/Events/ApplicationEvent.h"
+
 
 namespace Coffee {
 	Application::Application(){
