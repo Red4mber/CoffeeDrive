@@ -21,12 +21,14 @@ namespace Coffee
 	
 }
 
+// ENGINE LOGS MACROS
 #define CF_CORE_FATAL(...)	::Coffee::Log::GetCoreLogger()->fatal	(__VA_ARGS__)
 #define CF_CORE_ERROR(...)	::Coffee::Log::GetCoreLogger()->error	(__VA_ARGS__)
 #define CF_CORE_WARN(...)	::Coffee::Log::GetCoreLogger()->warn	(__VA_ARGS__)
 #define CF_CORE_INFO(...)	::Coffee::Log::GetCoreLogger()->info	(__VA_ARGS__)
 #define CF_CORE_TRACE(...)	::Coffee::Log::GetCoreLogger()->trace	(__VA_ARGS__)
 
+// APPLICATION LOG MACROS
 #define CF_FATAL(...)		::Coffee::Log::GetClientLogger()->fatal	(__VA_ARGS__)
 #define CF_ERROR(...)		::Coffee::Log::GetClientLogger()->error	(__VA_ARGS__)
 #define CF_WARN(...)		::Coffee::Log::GetClientLogger()->warn	(__VA_ARGS__)
