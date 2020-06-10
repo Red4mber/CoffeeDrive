@@ -5,5 +5,6 @@
 #include <stdio.h>
 
 #include "Coffee/Application.h"
-#include "Coffee/Core.h"
+#include "Coffee/Log.h"
+
 #include "Coffee/EntryPoint.h"

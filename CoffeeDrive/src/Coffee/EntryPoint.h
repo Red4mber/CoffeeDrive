@@ -2,8 +2,6 @@
 
 #ifdef CF_PLATFORM_WINDOWS
 
-#include "Log.h"
-
 extern Coffee::Application* Coffee::CreateApplication();
 
 int main(int argc, char** argv) {
