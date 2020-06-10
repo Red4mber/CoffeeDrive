@@ -27,9 +27,15 @@
     <ClInclude Include="src\Coffee\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Coffee\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Coffee\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Coffee\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

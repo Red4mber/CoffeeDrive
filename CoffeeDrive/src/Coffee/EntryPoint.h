@@ -2,11 +2,15 @@
 
 #ifdef CF_PLATFORM_WINDOWS
 
+#include "Log.h"
+
 extern Coffee::Application* Coffee::CreateApplication();
 
 int main(int argc, char** argv) {
-	printf("CoffeeDrive Engine started\n");
 
+	Coffee::Log::Init();
+	CF_CORE_WARN("CoffeeDrive Engine started");
+	CF_INFO("Client says hello");
 	auto app = Coffee::CreateApplication();
 
 	app->Run();
