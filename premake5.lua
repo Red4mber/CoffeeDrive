@@ -10,8 +10,16 @@ workspace "CoffeeDrive"
 		"Release",
 		"Dist"
 	}
+	
+	outputDir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+	
+	-- DEPENDENCIES
+	IncludeDir = {}
+	IncludeDir['GLFW'] = "CoffeeDrive/vendor/GLFW/include"
+	IncludeDir['spdlog'] = "CoffeeDrive/vendor/spdlog/include"
+	
+	include "CoffeeDrive/vendor/GLFW" -- Including the glfw premake script 
 
-outputDir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "CoffeeDrive"
 	location "CoffeeDrive"
@@ -33,7 +41,13 @@ project "CoffeeDrive"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links {
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -81,7 +95,7 @@ project "Sandbox"
 
 	includedirs
 	{
-		"CoffeeDrive/vendor/spdlog/include",
+		"%{IncludeDir.spdlog}",
 		"CoffeeDrive/src"
 	}
 
