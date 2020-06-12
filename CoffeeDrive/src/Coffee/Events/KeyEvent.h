@@ -25,7 +25,7 @@ namespace Coffee {
 
 		EVENT_CLASS_TYPE(KeyPressed)
 
-		std::string ToString() {
+		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "Key Pressed Event: " << m_KeyCode << " (" << m_RepeatCount << " repeats)";
 			return ss.str();
@@ -38,11 +38,11 @@ namespace Coffee {
 	// Key Released Event
 	class COFFEE_API KeyReleasedEvent : public KeyEvent {
 	public:
-		KeyReleasedEvent(int keycode, int repeatCount) : KeyEvent(keycode) {}
+		KeyReleasedEvent(int keycode) : KeyEvent(keycode) {}
 
 		EVENT_CLASS_TYPE(KeyReleased)
 
-		std::string ToString() {
+		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "Key Released Event: " << m_KeyCode;
 			return ss.str();

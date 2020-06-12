@@ -4,6 +4,8 @@
 #include "Coffee/Core.h"
 
 
+#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+
 namespace Coffee {
 
 	enum class EventType {
@@ -66,4 +68,9 @@ namespace Coffee {
 		Event& m_Event;
 	};
 
+
+	inline std::ostream& operator<<(std::ostream& os, const Event& e)
+	{
+		return os << e.ToString();
+	}
 }

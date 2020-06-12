@@ -158,17 +158,17 @@
     <ClInclude Include="src\Coffee\Events\KeyEvent.h" />
     <ClInclude Include="src\Coffee\Events\MouseEvent.h" />
     <ClInclude Include="src\Coffee\Log.h" />
-    <ClInclude Include="src\cf_pch.h" />
     <ClInclude Include="src\Coffee\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Coffee\Window.h" />
+    <ClInclude Include="src\cf_pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Coffee\Application.cpp" />
     <ClCompile Include="src\Coffee\Log.cpp" />
+    <ClCompile Include="src\Coffee\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\cf_pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Coffee\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

@@ -20,7 +20,7 @@ namespace Coffee {
 		inline unsigned int GetWidth() const { return m_Width; }
 		inline unsigned int GetHeight() const { return m_Height; }
 
-		std::string ToString() {
+		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "Window resized to : " << m_Width << " * " << m_Height;
 			return ss.str();
@@ -44,7 +44,7 @@ namespace Coffee {
 		inline unsigned int GetWidth() const { return m_WindowX; }
 		inline unsigned int GetHeight() const { return m_WindowY; }
 
-		std::string ToString() {
+		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "Window moved to : " << m_WindowX << " * " << m_WindowY;
 			return ss.str();

@@ -16,7 +16,7 @@ namespace Coffee {
 		inline float GetX() { return m_MouseX; }
 		inline float GetY() { return m_MouseY; }
 
-		std::string ToString() {
+		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "Mouse moved to : " << m_MouseX << " : " << m_MouseY;
 			return ss.str();
@@ -39,7 +39,7 @@ namespace Coffee {
 		inline float GetXoffset() { return m_XOffset; }
 		inline float GetYOffset() { return m_YOffset; }
 
-		std::string ToString() {
+		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "Mouse scrolled for : " << m_XOffset << " : " << m_YOffset;
 			return ss.str();
@@ -71,7 +71,7 @@ namespace Coffee {
 	public:
 		MouseButtonPressedEvent(int button) : MouseButtonEvent(button) {}
 		
-		std::string ToString() {
+		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "Mouse button pressed : " << m_Button;
 			return ss.str();
@@ -87,7 +87,7 @@ namespace Coffee {
 	public:
 		MouseButtonReleasedEvent(int button) : MouseButtonEvent(button) {}
 
-		std::string ToString() {
+		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "Mouse button released : " << m_Button;
 			return ss.str();
