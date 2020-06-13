@@ -43,8 +43,9 @@ namespace Coffee {
 		inline bool IsInCategory(EventCategory category) {
 			return GetCategoryFlags() & category; // BITWISE AND = Returns true if one or more bits are common
 		}
+
+		bool Handled = false;
 	protected:
-		bool m_Handled = false;
 	};
 
 	class EventDispatcher
@@ -59,7 +60,7 @@ namespace Coffee {
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;
