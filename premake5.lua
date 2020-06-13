@@ -67,16 +67,21 @@ project "CoffeeDrive"
 		}
 
 	filter "configurations:Debug"
+		buildoptions "/MDd"
 		defines "CF_DEBUG"
 		symbols "on"
 
 	filter "configurations:Release"
+		buildoptions "/MD"
 		defines "CF_RELEASE"
 		optimize "on"
+		symbols "off"
 
 	filter "configurations:Dist"
+		buildoptions "/MD"
 		defines "CF_DIST"
 		optimize "on"
+		symbols "off"
 
 
 project "Sandbox"
@@ -116,12 +121,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "CF_DEBUG"
+		buildoptions "/MDd"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "CF_RELEASE"
+		buildoptions "/MD"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "CF_DIST"
+		buildoptions "/MD"
 		optimize "on"

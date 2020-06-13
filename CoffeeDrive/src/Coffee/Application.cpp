@@ -1,8 +1,8 @@
 #include "cf_pch.h"
 #include "Application.h"
 
-#include "Coffee/Events/ApplicationEvent.h"
 #include "Coffee/Log.h"
+
 #include <GLFW/glfw3.h>
 
 namespace Coffee {
@@ -16,14 +16,30 @@ namespace Coffee {
 	
 	}
 
+
+	void Application::pushLayer(Layer* layer) {
+		m_LayerStack.PushLayer(layer);
+	}
+
+	void Application::pushOverlay(Layer* overlay) {
+		m_LayerStack.PushOverlay(overlay);
+	}
+
 	void Application::OnEvent(Event& e) {
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowClosedEvent>(BIND_EVENT_FN(Application::OnWindowClosed));
-		CF_CORE_INFO(e.ToString());
+
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();) {
+
+		}
 	}
 
 	void Application::Run() {
 		while (m_Running) { // App Loop
+			for (Layer* l : m_LayerStack) {
+				l->OnUpdate();
+			}
+
 			glClearColor(1, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 			m_Window->OnUpdate();

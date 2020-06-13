@@ -37,6 +37,12 @@
     <ClInclude Include="src\Coffee\Events\MouseEvent.h">
       <Filter>Coffee\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Coffee\Layer.h">
+      <Filter>Coffee</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Coffee\LayerStack.h">
+      <Filter>Coffee</Filter>
+    </ClInclude>
     <ClInclude Include="src\Coffee\Log.h">
       <Filter>Coffee</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Coffee\Application.cpp">
+      <Filter>Coffee</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Coffee\Layer.cpp">
+      <Filter>Coffee</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Coffee\LayerStack.cpp">
       <Filter>Coffee</Filter>
     </ClCompile>
     <ClCompile Include="src\Coffee\Log.cpp">
